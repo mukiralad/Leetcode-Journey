@@ -4,7 +4,7 @@ class Solution:
         
         x=res+1
         
-        print(x)
+        
         
         z=[]
         
