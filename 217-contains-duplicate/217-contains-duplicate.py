@@ -10,7 +10,7 @@ class Solution:
                 Dict[i]=1
                 
         
-        print(Dict)
+        
         
         for i in Dict:
             if(Dict[i]>=2):
