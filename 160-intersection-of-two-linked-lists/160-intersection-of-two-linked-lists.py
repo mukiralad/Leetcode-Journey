@@ -10,37 +10,13 @@ class Solution:
         d1=headA
         d2=headB
         
-        l1=0
-        l2=0
-        
-        while(d1):
-            l1+=1
-            d1=d1.next
-        
-        while(d2):
-            l2+=1
-            d2=d2.next
+        while(d1!=d2):
             
+            d1=d1.next if d1 else headB
+            d2=d2.next if d2 else headA
         
-        dif=abs(l1-l2)
-        
-        if(l1>l2):
-            large=headA
-            small=headB
-        else:
-            large=headB
-            small=headA
-        
-        for i in range(dif):
-            large=large.next
+        return d1
             
-        while(large and small):
-            if(large==small):
-                return large
-            large=large.next
-            small=small.next
-            
-        return None
         
         
         
