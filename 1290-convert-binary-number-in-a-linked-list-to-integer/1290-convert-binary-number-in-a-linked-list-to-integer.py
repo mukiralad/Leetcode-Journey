@@ -7,25 +7,18 @@ class Solution:
     def getDecimalValue(self, head: ListNode) -> int:
         
         temp=head
-        
-        x=[]
+        x=""
         
         while(temp):
-            x.append(temp.val)
+            x+=str(temp.val)
             temp=temp.next
         
-        d=""
         
-        for i in x:
-            d+=str(i)
-        print(d)
+        x=int(x,2)
+        return x
         
         
         
-        res=int(d,2)
         
-        return res
-            
-            
             
         
