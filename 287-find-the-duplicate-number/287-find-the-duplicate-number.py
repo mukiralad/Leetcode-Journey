@@ -1,11 +1,24 @@
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         
-        x=Counter(nums)
+        tortoise=hare=nums[0]
         
-        for i in x:
+        while(True):
             
-            if(x[i]>1):
-                return i
+            tortoise=nums[tortoise]
+            hare=nums[nums[hare]]
+            
+            if(tortoise==hare):
+                break
+            
+        tortoise=nums[0]
+        while(tortoise!=hare):
+            
+            tortoise=nums[tortoise]
+            hare=nums[hare]
+        
+        return hare
+        
+        
         
         
