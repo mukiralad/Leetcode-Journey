@@ -15,4 +15,4 @@ class Solution:
         if(p.val!=q.val):
             return False
         
-        return self.isSameTree(p.right,q.right) and self.isSameTree(p.left,q.left)
+        return self.isSameTree(p.left,q.left) and self.isSameTree(p.right,q.right)
