@@ -7,6 +7,6 @@ class Solution:
             if(i not in x):
                 return i
         
-        return nums[-1]+1
+        return len(nums)+1
           
         
