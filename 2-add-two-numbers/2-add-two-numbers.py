@@ -6,49 +6,41 @@
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         
+        nums1=[]
+        nums2=[]
+        
         temp1=l1
-        
-        res1=[]
-        
-        while(temp1):
-            res1.append(temp1.val)
-            temp1=temp1.next
         
         temp2=l2
         
-        res2=[]
+        while temp1 is not None:
+            nums1.append(temp1.val)
+            temp1=temp1.next
         
-        while(temp2):
-            res2.append(temp2.val)
+        while temp2 is not None:
+            nums2.append(temp2.val)
             temp2=temp2.next
         
-        num1=res1[::-1]
-        num2=res2[::-1]
         
-        ans1=int("".join(map(str,num1)))
-        ans2=int("".join(map(str,num2)))
+        x=nums1[::-1]
+        y=nums2[::-1]
         
-        final=ans1+ans2
+        one=""
+        for i in x:
+            one+=str(i)
+        two=""
+        for j in y:
+            two+=str(j)
         
-        x=str(final)
+        ans=int(one)+int(two)
         
-        x=x[::-1]
-        
-        listt=[]
-        
-        for i in range(len(x)):
-            listt.append(int(x[i]))
-        
+        ans=str(ans)
+        ans=ans[::-1]
         
         curr=dummy=ListNode(0)
         
-        for i in listt:
+        for i in ans:
             curr.next=ListNode(i)
             curr=curr.next
         
         return dummy.next
-        
-        
-        
-        
-        
