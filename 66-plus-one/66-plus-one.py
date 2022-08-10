@@ -1,22 +1,14 @@
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
-        res = int("".join(map(str, digits)))
         
-        x=res+1
+        x=""
+        for i in digits:
+            x+=str(i)
+        print(x)
+        ans=str(int(x)+1)
+        res=[]
+        for i in ans:
+            res.append(int(i))
         
-        
-        
-        z=[]
-        
-        while(x>0):
-            k=x%10
-            z.append(k)
-            x=x//10
-        
-        return z[::-1]
-            
-
-        
-        
-        
+        return res
         
