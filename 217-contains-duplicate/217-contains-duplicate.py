@@ -1,20 +1,19 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        
-        Dict={}
+        dic={}
         
         for i in nums:
-            if(i in Dict):
-                Dict[i]=Dict[i]+1
+            if i in dic:
+                dic[i]=dic[i]+1
             else:
-                Dict[i]=1
+                dic[i]=1
+        
+        for i in dic:
+            if(dic[i]>1):
+                return True
+        return False
+        
+        
+                
                 
         
-        
-        
-        for i in Dict:
-            if(Dict[i]>=2):
-                return True
-         
-            
-            
