@@ -1,27 +1,28 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         
-        islands=0
+        count=0
         
         for i in range(len(grid)):
             for j in range(len(grid[0])):
-                if(grid[i][j]=="1"):
-                    islands+=1
+                
+                if(grid[i][j]=='1'):
+                    
                     self.dfs(i,j,grid)
+                    count+=1
         
-        return islands
-        
+        return count
     
-    def dfs(self,r,c,grid):
+    def dfs(self,a,b,grid):
         
-        if r<0 or r>=len(grid) or c<0 or c>=len(grid[0]):
+        if a<0 or a>=len(grid) or b<0 or b>=len(grid[0]):
             return
         
-        if(grid[r][c]=="1"):
-            grid[r][c]="0"
-            self.dfs(r+1,c,grid)
-            self.dfs(r-1,c,grid)
-            self.dfs(r,c+1,grid)
-            self.dfs(r,c-1,grid)
-            
-            
+        if(grid[a][b]=='1'):
+            grid[a][b]='-1'
+            self.dfs(a+1,b,grid)
+            self.dfs(a-1,b,grid)
+            self.dfs(a,b+1,grid)
+            self.dfs(a,b-1,grid)
+    
+        
